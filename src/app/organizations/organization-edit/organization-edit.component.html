@@ -1,0 +1,13 @@
+
+<br/>
+<div class="card bg-info text-white">
+    <div class="card-body">Organization Information</div>
+</div>
+
+<div class="row"></div>
+<br/>
+<div class="alert alert-danger"  *ngIf="error">
+    {{error}}
+</div>
+
+<pre><code>{{ organizationDetails | json }}</code></pre>

@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-xs-12">
+    <br/><button class="btn btn-success" (click)="refreshOrganizations()">Refresh Organizations</button>
+    <div class="alert alert-danger"  *ngIf="error">
+      {{error}}
+    </div>
+    <div  *ngIf="isLoading" style="text-align: center">
+      <app-loading-spinner></app-loading-spinner>
+    </div>
+  </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-xs-10">
+      <hr>
+      <ul class="list-group">
+        <a
+          class="list-group-item"
+          style="cursor: pointer"
+          *ngFor="let organization of organizations; let i = index"
+          [routerLink]="[organization.id]"
+          routerLinkActive="active"
+        >
+          {{ organization.id }} - {{ organization.name }}
+        </a>
+      </ul>
+    </div>
+</div>
